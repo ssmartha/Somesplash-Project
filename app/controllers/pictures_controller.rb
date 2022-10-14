@@ -1,11 +1,13 @@
 class PicturesController < ApplicationController
+  # GET	/pictures/new
   def new
   end
 
-  def create
+  # GET	/pictures/:id
+  def show
   end
 
-  def show
+  def create
   end
 
   def edit
@@ -14,6 +16,7 @@ class PicturesController < ApplicationController
   def update
   end
 
+  # DELETE	/pictures/:id
   def destroy
   end
 end
