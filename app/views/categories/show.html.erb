@@ -1,2 +1,10 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.name %></h1>
+
+<p><%= @category.description %><p><br>
+
+
+<% @pictures.each do |picture| %>
+<%= picture.title %><br>
+<%= picture.comments_count %> comments<br><br>
+<% end %>
+
