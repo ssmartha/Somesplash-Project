@@ -1,5 +1,6 @@
 class Picture < ApplicationRecord
-  has_many :comments, dependent: :nullify
+  #ASSOCIATIONS
+  has_many :comments, dependent: :destroy
   belongs_to :category, counter_cache: true, optional: true
 
 end
