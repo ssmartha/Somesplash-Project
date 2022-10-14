@@ -1,3 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :picture
+  #ASSOCIATIONS
+  belongs_to :picture, counter_cache: true
+
 end
