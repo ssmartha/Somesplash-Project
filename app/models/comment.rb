@@ -1,6 +1,9 @@
 class Comment < ApplicationRecord
-  #Validations
+
+  #VALIDATIONS
   validates :content, length: { in: 1..150 }
 
-  belongs_to :picture
+  #ASSOCIATIONS
+  belongs_to :picture, counter_cache: true
+
 end
