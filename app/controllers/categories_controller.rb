@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
   def index
+    categories = Category.all
+
+    render json: categories.to_json
   end
 
   def new
@@ -15,8 +18,10 @@ class CategoriesController < ApplicationController
   end
 
   def update
-  end
+    categorie = Category.find(params[:id])
 
+    if company.update(company_params)
+  end
   def destroy
   end
 end

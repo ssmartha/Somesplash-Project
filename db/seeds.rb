@@ -18,7 +18,6 @@ categories.each do |category|
     Category.create(
         name: category[0],
         description: category[1],
-        pictures_count: 3,
     )
 end
 
@@ -31,7 +30,6 @@ pictures_wallpaper.each do |picture|
         title: picture[0],
         description: picture[1],
         category_id: Category.all[0].id,
-        comments_count: 3,
     )
 end
 
@@ -40,7 +38,6 @@ pictures_nature.each do |picture|
         title: picture[0],
         description: picture[1],
         category_id: Category.all[1].id,
-        comments_count: 3,
     )
 end
 
@@ -49,7 +46,6 @@ pictures_people.each do |picture|
         title: picture[0],
         description: picture[1],
         category_id: Category.all[2].id,
-        comments_count: 3,
     )
 end
 
@@ -59,21 +55,21 @@ comments.each_with_index do |comment, index|
     @id = 0
     if index <= 2
         @id = 0
-    elsif index <= 5
+    elsif 2 < index && index <= 5
         @id = 1
-    elsif index <= 8
+    elsif 5 < index && index <= 8
         @id = 2
-    elsif index <= 11
+    elsif 8 < index && index <= 11
         @id = 3
-    elsif index <= 14
+    elsif 11 < index && index <= 14
         @id = 4
-    elsif index <= 17
+    elsif 14 < index && index <= 17
         @id = 5
-    elsif index <= 20
+    elsif 17 < index && index <= 20
         @id = 6
-    elsif index <= 23
+    elsif 20 < index && index <= 23
         @id = 7
-    elsif index <= 25
+    elsif 23 < index && index <= 25
         @id = 8
     end
     Comment.create(
