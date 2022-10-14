@@ -1,5 +1,11 @@
 class CategoriesController < ApplicationController
+  # GET	/categories
   def index
+    @categories=Category.all
+  end
+
+  # GET	/categories/:id
+  def show
   end
 
   def new
@@ -8,15 +14,13 @@ class CategoriesController < ApplicationController
   def create
   end
 
-  def show
-  end
-
   def edit
   end
 
   def update
   end
 
+  # DELETE	/categories/:id
   def destroy
   end
 end
