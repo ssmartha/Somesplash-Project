@@ -9,5 +9,9 @@ class CommentsController < ApplicationController
 
   # DELETE	/comments/:id
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    redirect_to picture_path, status: :see_other
   end
 end

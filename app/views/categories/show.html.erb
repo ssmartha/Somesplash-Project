@@ -4,10 +4,10 @@
 
 
 <% @pictures.each do |picture| %>
-ID CAT:<%= picture.id %><br>
 <%= picture.title %><br>
-<%= picture.comments_count %> comments
-<%= link_to "destroy", category_path(category), data: {
+<%= picture.comments_count %> comments <br>
+<%= link_to "show", picture_path(picture)%>
+<%= link_to "destroy", picture_path(picture), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
     }%><br><br>
