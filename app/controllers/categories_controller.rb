@@ -12,16 +12,29 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @categories = Category.find(params[:id])
+    @pictures = @categories.pictures
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def update
-    categorie = Category.find(params[:id])
+    @category = Category.find(params[:id])
 
-    if company.update(company_params)
+    if @category.update(category_params)
+      redirect_to categories_path
+    else
+      render "edit", status: :unprocessable_entity
+    end
   end
   def destroy
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :description)
   end
 end

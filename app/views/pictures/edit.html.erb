@@ -1,2 +1,26 @@
-<h1>Pictures#edit</h1>
-<p>Find me in app/views/pictures/edit.html.erb</p>
+
+<h1>Edit Picture</h1>
+
+<%= form_with model: @picture do |form| %>
+    <div>
+        <%= form.label :name %> <br/>
+        <%= form.text_field :name %>
+    </div>
+    <% @picture.errors.full_messages_for(:name).each do |messages|%>
+        <span><%= message %></span>
+    <% end %>
+    <br/><br/>
+
+    <div>
+        <%= form.label :description %> <br/>
+        <%= form.text_area :description %>
+    </div>
+
+    <% @picture.errors.full_messages_for(:description).each do |messages|%>
+        <span><%= message %></span>
+    <% end %>
+
+    <br/><br/>
+
+    <%= form.submit %>
+<% end %>

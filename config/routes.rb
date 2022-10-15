@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get "/categories", to: "categories#index"
-  patch "/categories/:id", to: "categories#update"
+  resources :categories
+  resources :comments
+  resources :pictures
   #get 'comments/new'
   #get 'comments/create'
   #get 'comments/destroy'
