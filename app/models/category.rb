@@ -6,5 +6,6 @@ class Category < ApplicationRecord
 
   #ASSOCIATIONS
   has_many :pictures, dependent: :destroy
+  has_one_attached :cover
 
 end
