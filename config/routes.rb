@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :pictures
   resources :comments
+  
   # get 'comments/new'
   # get 'comments/create'
   # get 'comments/destroy'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   # get 'categories/edit'
   # get 'categories/update'
   # get 'categories/destroy'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

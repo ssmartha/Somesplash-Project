@@ -1,7 +1,7 @@
 class Picture < ApplicationRecord
   #VALIDATIONS
   validates :title, presence: {message: "Title can't be blank"}
-  # validates :photo, presence: {message: "Image can't be blank"}
+  #validates :photo, presence: {message: "Image can't be blank"}
 
   #ASSOCIATIONS
   has_many :comments, dependent: :destroy
