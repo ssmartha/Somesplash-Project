@@ -1,6 +1,13 @@
 class PicturesController < ApplicationController
+  # GET	/pictures/new
   def new
     @picture = Picture.new
+  end
+
+  # GET	/pictures/:id
+  def show
+    @picture = Picture.find(params[:id])
+    @comments = @picture.comments
   end
 
   def create
@@ -16,9 +23,6 @@ class PicturesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
     @picture = Picture.find(params[:id])
   end
@@ -32,10 +36,13 @@ class PicturesController < ApplicationController
       render "edit", status: :unprocessable_entity
     end
   end
-  def destroy
-  end
 
+  # DELETE	/pictures/:id
   def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+
+    redirect_to categories_path, status: :see_other
   end
 
   private
