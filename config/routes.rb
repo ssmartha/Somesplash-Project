@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :pictures
   resources :comments
   
+   # custom routes
+  get "/search", to: "pictures#search"
   # get 'comments/new'
   # get 'comments/create'
   # get 'comments/destroy'

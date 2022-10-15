@@ -1,0 +1,24 @@
+<h1>Search</h1>
+<br/><br/>  
+<%= link_to "Search", search_path %>
+<%= form_with url: "/search", method: :get do |form| %>
+          <%= form.text_field :query, placeholder: "search" %>
+<% end %>
+
+
+<p>Search term: <%= @query %></p>
+<p><%= @pictures.size %> pictures found</p>
+<br/>
+
+<% @pictures.each do |picture| %>
+  <div><%= image_tag picture.photo %></div>
+<% end %>
+
+<%= picture.title %><br>
+<%= picture.comments_count %> comments <br>
+<%= link_to "show", picture_path(picture)%>
+<%= link_to "edit", edit_picture_path(picture) %>
+<%= link_to "destroy", picture_path(picture), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+    }%><br><br>

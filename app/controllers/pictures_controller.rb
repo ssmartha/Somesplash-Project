@@ -45,6 +45,14 @@ class PicturesController < ApplicationController
     redirect_to categories_path, status: :see_other
   end
 
+  # GET /search?query=
+  def search
+    p @query 
+    @query = params[:query]
+    @pictures = Picture.where("LOWER(title) LIKE ?", "%#{@query}%")
+    # render "search"
+  end
+
   private
   
   def picture_params
