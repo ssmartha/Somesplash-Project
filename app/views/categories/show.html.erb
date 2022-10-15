@@ -8,6 +8,7 @@
 
 
 <% @pictures.each do |picture| %>
+<%= image_tag picture.photo%>
 <%= picture.title %><br>
 <%= picture.comments_count %> comments <br>
 <%= link_to "show", picture_path(picture)%>
