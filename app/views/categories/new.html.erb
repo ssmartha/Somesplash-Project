@@ -1,2 +1,25 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<h1>New Category</h1>
+<div>
+  <% @category.errors.full_messages.each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
+
+<div>
+  <%= form.label :name %><br/>
+  <%= form.text_field :name %>
+</div>  
+
+<div>
+  <%= form.label :description %><br/>
+  <%= form.text_area :description %>
+</div>
+
+<label >COVER</label>
+<input type="file" accept="image/png, image/jpeg, image/jpg">
+
+<%= form.submit %>
+
+<div>
+	<a href="#">back</a>
+</div>
