@@ -16,12 +16,12 @@
   <%= form.text_area :description %>
 </div>
 
-<label >COVER</label>
-<input type="file" accept="image/png, image/jpeg, image/jpg">
+<label >COVER</label><br>
+<input type="file" accept="image/png, image/jpeg, image/jpg"><br><br>
 
 <%= form.submit %>
 
 <div>
-	<a href="#">back</a>
+  <%= link_to "Back", categories_path %>
 </div>
 <% end %>

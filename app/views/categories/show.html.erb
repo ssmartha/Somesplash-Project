@@ -2,6 +2,10 @@
 
 <p><%= @category.description %><p><br>
 
+<div>
+  <%= link_to "New photo", new_picture_path %><br><br>
+</div>
+
 
 <% @pictures.each do |picture| %>
 <%= picture.title %><br>

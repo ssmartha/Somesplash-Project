@@ -2,13 +2,16 @@
 <h1>Edit Category</h1>
 
 <%= form_with model: @category do |form| %>
+    <% @category.errors.full_messages_for(:name).each do |message|%>
+        <span><%= message %></span><br/><br/>
+    <% end %>
+    <%# <% @category.errors.full_messages_for(:description).each do |message|%>
+        <%#<span><%= message %><%#</span> %>
+    <%#<% end %>
     <div>
         <%= form.label :name %> <br/>
         <%= form.text_field :name %>
     </div>
-    <% @category.errors.full_messages_for(:name).each do |messages|%>
-        <span><%= message %></span>
-    <% end %>
     <br/><br/>
 
     <div>
@@ -16,11 +19,12 @@
         <%= form.text_area :description %>
     </div>
 
-    <% @category.errors.full_messages_for(:description).each do |messages|%>
-        <span><%= message %></span>
-    <% end %>
 
-    <br/><br/>
+    <label >COVER</label><br>
+<input type="file" accept="image/png, image/jpeg, image/jpg"><br><br>
 
     <%= form.submit %>
+    <div>
+    <%= link_to "Back", categories_path %>
+    </div>
 <% end %>

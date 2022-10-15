@@ -9,21 +9,26 @@
 <div>
   <%= form.label :title %><br/>
   <%= form.text_field :title %>
-</div>  
+</div>  <br/>
 
 <div>
   <%= form.label :description %><br/>
   <%= form.text_area :description %>
-</div>
+</div> <br/>
 
+<label >CATEGORY</label><br/>
 <select name="CATEGORY">
   <% Category.all.each do |category| %>
     <option value=<%category.name%>><%=category.name%></option>
   <%end%>
-</select>
+</select><br/><br/>
 
-<label >IMAGE</label>
-<input type="file" accept="image/png, image/jpeg, image/jpg">
+<label >IMAGE</label><br/>
+<input type="file" accept="image/png, image/jpeg, image/jpg"><br/><br/>
 
 <%= form.submit %>
+
+<div>
+  <%= link_to "Back", "/pictures/#{@picture.id}" %>
+</div>
 <% end %>
