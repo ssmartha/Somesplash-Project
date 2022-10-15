@@ -1,7 +1,12 @@
 <h1>Categories</h1>
 
 <% @categories.each do |category| %>
+ID CAT:<%= category.id %><br>
 <%= category.name %><br>
 <%= category.pictures_count %> photos<br>
-<%= category.description %><br><br>
+<%= category.description %><br>
+<%= link_to "destroy", category_path(category), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+    }%><br><br>
 <% end %>

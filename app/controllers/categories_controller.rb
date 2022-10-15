@@ -24,5 +24,10 @@ class CategoriesController < ApplicationController
 
   # DELETE	/categories/:id
   def destroy
+    @category=Category.find(params[:id])
+    p @category
+    @category.destroy
+
+    redirect_to categories_path, status: :see_other
   end
 end
