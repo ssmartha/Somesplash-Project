@@ -2,13 +2,13 @@
 <h1 class="edit_h1">Edit Picture</h1>
 
 <%= form_with model: @picture do |form| %>
+    <% @picture.errors.full_messages_for(:name).each do |messages|%>
+        <span><%= message %></span>
+    <% end %>
     <div>
         <label class="edit_name">TITLE</label><br>
         <%= form.text_field :title, class: "edit_name_text" %>
     </div>
-    <% @picture.errors.full_messages_for(:name).each do |messages|%>
-        <span><%= message %></span>
-    <% end %>
 
     <div>
         <label class="edit_name">DESCRIPTION</label>
