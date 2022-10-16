@@ -1,5 +1,5 @@
 
-<h1>Edit Category</h1>
+<h1 class="edit_h1">Edit Category</h1>
 
 <%= form_with model: @category do |form| %>
     <% @category.errors.full_messages_for(:name).each do |message|%>
@@ -9,22 +9,21 @@
         <%#<span><%= message %><%#</span> %>
     <%#<% end %>
     <div>
-        <%= form.label :name %> <br/>
-        <%= form.text_field :name %>
-    </div>
-    <br/><br/>
-
-    <div>
-        <%= form.label :description %> <br/>
-        <%= form.text_area :description %>
+        <label class="edit_name">NAME</label><br>
+        <%= form.text_field :name, class: "edit_name_text" %>
     </div>
 
-
-    <label >COVER</label><br>
-<input type="file" accept="image/png, image/jpeg, image/jpg"><br><br>
-
-    <%= form.submit %>
     <div>
-    <%= link_to "Back", categories_path %>
+        <label class="edit_name">DESCRIPTION</label><br>
+        <%= form.text_area :description, class: "edit_description" %>
+    </div>
+
+
+    <label class="edit_name">COVER</label><br>
+<input type="file" accept="image/png, image/jpeg, image/jpg" class="edit_input_file"><br>
+
+    <%= form.submit "Edit Category", class: "edit_input_submit" %>
+    <div>
+    <%= link_to "Back", categories_path, class: "edit_input_back"  %>
     </div>
 <% end %>
