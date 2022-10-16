@@ -25,11 +25,16 @@
 }
 
 /* Buttons base - END */
+.button--nw{
+  background-color: #757575;
+  color: #FFF;
+  border-radius: 4px;
+}
 
 /* Buttons Default - START */
 .button--default {
   background-color: var(--gray-200);
-  color: var(--primary-darker);
+  /* color: ; */
 }
 
 .button--default:hover {

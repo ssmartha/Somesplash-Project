@@ -1,18 +1,42 @@
-<h1>Categories</h1>
 
+<section class="container-ss">
+<h1 class="margin-bottom-22">Categories</h1>
 <div>
-    <%= link_to "New category", new_category_path %><br><br>
+    <%= link_to "New category", new_category_path, class:"button--nw button--sm" %>
 </div>
 
+
+
 <% @categories.each do |category| %>
-<%= image_tag category.cover%><br>
-<%= category.name %><br>
-<%= category.pictures_count %> photos<br>
-<%= category.description %><br>
-<%= link_to "show", category_path(category)%>
-<%= link_to "edit", edit_category_path(category)%>
-<%= link_to "destroy", category_path(category), data: {
+<div>
+  <%= link_to image_tag(category.cover, class:"border-radius-tlr-6 card-shadow-lr margin-top-16"), category_path(category)%>
+  <div>
+   <div>
+    <h3 class="padding-lr-16 padding-t-8"><%= category.name %></h3>
+    <p class="padding-lr-16"><%= category.pictures_count %> photos</p>
+    <p class="padding-lr-16"><%= category.description %></p>
+   </div>
+   <div class="padding-lr-16 float-right">
+    <%= link_to edit_category_path(category) do %>
+    <i class="ri-pencil-line"></i>
+    <% end %>
+    <%= link_to category_path(category), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
-    }%><br><br>
+    } do%>
+    <i class="ri-delete-bin-line"></i>
+    <% end %>
+   <div><br>
+  </div>
+</div>
 <% end %>
+</section>
+
+
+
+
+
+
+
+
+

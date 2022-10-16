@@ -108,6 +108,7 @@
   margin: 2px;
 }
 
+
 .checkbox__input:checked {
   background-color: var(--primary-dark);
   background-image: url("../../icons/check.svg");
