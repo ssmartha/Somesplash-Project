@@ -1,6 +1,7 @@
 <h1><%= @picture.title %></h1>
 <p><%= @picture.description %></p>
 Updated at <%= @picture.updated_at.strftime('%Y-%m-%d')%><br><br>
+<%= image_tag @picture.photo%>
 
 <h2> Comments</h2><br>
 <% @comments.each do |comment| %>

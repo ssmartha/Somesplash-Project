@@ -5,6 +5,7 @@
 </div>
 
 <% @categories.each do |category| %>
+<%= image_tag category.cover%><br>
 <%= category.name %><br>
 <%= category.pictures_count %> photos<br>
 <%= category.description %><br>

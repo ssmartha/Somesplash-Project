@@ -47,15 +47,16 @@ class PicturesController < ApplicationController
 
   # GET /search?query=
   def search
-    p @query 
     @query = params[:query]
-    @pictures = Picture.where("LOWER(title) LIKE ?", "%#{@query}%")
+    if !@query.nil?
+    @pictures = Picture.where("LOWER(title) LIKE ?", "%#{@query.downcase}%")
+    end
     # render "search"
   end
 
   private
   
   def picture_params
-    params.require(:picture).permit(:name, :description)
+    params.require(:picture).permit(:name, :description, :photo)
   end
 end
