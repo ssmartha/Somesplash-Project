@@ -1,8 +1,8 @@
-<h1>Search</h1>  
+<h1 class="edit_h1">Search</h1>  
 <%= form_with url: "/search", method: :get do |form| %>
-    <%= form.text_field :query, placeholder: "search" %><br>
-    <%= form.submit "SEARCH PHOTOS"%>
-<% end %><br>
+    <%= form.text_field :query, placeholder: "search", class: "edit_name_text" %>
+    <%= form.submit "SEARCH PHOTOS", class: "edit_input_submit"%>
+<% end %>
 
 <% if @query %>
 <p><%= @pictures.size %> pictures found</p><br/>
@@ -16,10 +16,10 @@
 <%= link_to "destroy", picture_path(picture), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
-    }%><br><br>
+    }%><br>
 <% end %>
 
 <% end %>
 <div>
-  <%= link_to "Back", categories_path %>
+  <%= link_to "Back", categories_path , class: "edit_input_back" %>
 </div>

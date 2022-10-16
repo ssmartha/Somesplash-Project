@@ -1,4 +1,4 @@
-<h1>New Category</h1>
+<h1 class="edit_h1">New Category</h1>
 <div>
   <% @category.errors.full_messages.each do |message| %>
   <div><%= message %></div>
@@ -7,21 +7,21 @@
 
 <%= form_with model: @category do |form| %>
 <div>
-  <%= form.label :name %><br/>
-  <%= form.text_field :name %>
+  <label class="edit_name">NAME</label><br>
+  <%= form.text_field :name, class: "edit_name_text" %>
 </div>  
 
 <div>
-  <%= form.label :description %><br/>
-  <%= form.text_area :description %>
+  <label class="edit_name">DESCRIPTION</label><br>
+  <%= form.text_area :description, class: "edit_description" %>
 </div>
 
-<label >COVER</label><br>
-<input type="file" accept="image/png, image/jpeg, image/jpg"><br><br>
+<label class="edit_name" >COVER</label><br>
+<input type="file" accept="image/png, image/jpeg, image/jpg" class="edit_input_file"><br><br>
 
-<%= form.submit %>
+<%= form.submit "Create Category", class: "edit_input_submit" %>
 
 <div>
-  <%= link_to "Back", categories_path %>
+  <%= link_to "Back", categories_path, class: "edit_input_back"%>
 </div>
 <% end %>
