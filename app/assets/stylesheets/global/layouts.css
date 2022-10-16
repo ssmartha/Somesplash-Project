@@ -1,6 +1,11 @@
 /* Layouts */
 
 /* Containers */
+.container-ss {
+  max-width: 328px;
+  padding: 0 ;
+  margin: auto;
+}
 
 .container-sm {
   max-width: 640px;
